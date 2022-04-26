@@ -29,7 +29,7 @@ Vous devez faire un CRUD sur les utilisateurs en respectant ce qui suit :
 - Lors de l'affichage d'un utilisateur :
   - La route menant à cette page est `/user/show`.
   - L'identifiant de l'utilisateur est à récupérer en json dans les `input` de PHP. Le json contient un
-  tableau associatif la clé : `id_user`.
+  tableau associatif avec la clé : `id_user`.
   - La réponse doit être un json d'un tableau associatif de l'utilisateur. Le tableau de l'utilisateur doit avoir une
   clé `id_user`, `pseudo`, `email` et `created_at`.
   - Si aucun utilisateur existe pour l'identifiant demandé, alors la réponse doit être un json contenant `null`.
@@ -42,11 +42,11 @@ Vous devez faire un CRUD sur les utilisateurs en respectant ce qui suit :
   - Les champs `pseudo`, `email` et `pwd` sont obligatoires lors de modification d'un utilisateur. Le mot de passe est
   vérifié avant la modification, dans la base de données, de l'utilisateur.
   - Les informations d'édition de l'utilisateur sont à récupérer en json dans les `input` de PHP. Le json contient un
-  tableau associatif du formulaire envoyé avec les clés : `pseudo`, `email`, `pwd`, `new_pwd` et `conf_new_pwd`.
+  tableau associatif du formulaire envoyé avec les clés : `id_user`, `pseudo`, `email`, `pwd`, `new_pwd` et `conf_new_pwd`.
 - Lors de la suppression d'un commentaire :
   - La route menant à cette page est `/user/delete`.
   - L'identifiant de l'utilisateur est à récupérer en json dans les `input` de PHP. Le json contient un
-  tableau associatif la clé : `id_user`.
+  tableau associatif avec la clé : `id_user`.
 
 ### Technique
 
