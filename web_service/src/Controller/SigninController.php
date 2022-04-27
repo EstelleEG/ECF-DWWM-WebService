@@ -8,11 +8,6 @@ class SigninController
 {
     public function index()
     {
-//        if (isset($_SESSION['user'])) {
-//            header('Location: /');
-//            die;
-//        }
-
         $args = [
             'email' => [
                 'filter' => FILTER_VALIDATE_REGEXP,

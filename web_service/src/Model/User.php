@@ -10,6 +10,25 @@ class User
     protected string $email;
     protected string $created_at;
 
+
+    public function toArray(): array
+    {
+        return [
+            "id_user" => $this->id_user,
+            "pseudo" => $this->pseudo,
+            "pwd" => $this->pwd,
+            "email" => $this->email,
+            "created_at" => $this->created_at
+        ];
+    }
+
+    public static function fromArray(array $data): User
+    {
+        $a = new User();
+        return $a->setPseudo($data['pseudo'])->setPwd($data['pwd'])
+            ->setEmail($data['email']);
+    }
+
     /**
      * Hash un mot de passe, passé en paramètre, avant de l'assigner à la propriété pwd.
      *
@@ -130,3 +149,4 @@ class User
         return $this;
     }
 }
+

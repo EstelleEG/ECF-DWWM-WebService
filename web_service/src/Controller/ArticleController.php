@@ -27,11 +27,6 @@ class ArticleController
 
     public function new()
     {
-//        if (!isset($_SESSION['user'])) {
-//            header('Location: /');
-//            die;
-//        }
-
         $article_post = json_decode(file_get_contents('php://input'), true);
 
         if (isset($article_post['title']) && isset($article_post['content'])) {
@@ -72,13 +67,12 @@ class ArticleController
         echo json_encode($article);
     }
 
+    /**
+     * Fonction pour éditer mon utilisateur et je vérifie que les variables existent bien et qu"elles ne soient pas nulles
+     *
+     */
     public function edit()
     {
-//        if (!isset($_SESSION['user'])) {
-//            header('Location: /');
-//            die;
-//        }
-
         $article_post = json_decode(file_get_contents('php://input'), true);
 
         if (isset($article_post['title']) && isset($article_post['content'])) {
@@ -100,11 +94,6 @@ class ArticleController
 
     public function delete()
     {
-//        if (!isset($_SESSION['user'])) {
-//            header('Location: /');
-//            die;
-//        }
-
         $data = json_decode(file_get_contents('php://input'), true);
         $articleDao = new ArticleDao();
         $articleDao->delete($data['id_article']);
